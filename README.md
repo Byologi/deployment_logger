@@ -1,20 +1,20 @@
-# 🚀 Deployment Logger API
+#  Deployment Logger API
 
 A simple Spring Boot REST API for managing deployment records.
 This project demonstrates CRUD operations, layered architecture, and Docker containerization.
 
 ---
 
-## 📌 Features
+##  Features
 
-* ➕ Create deployment
-* 📥 Retrieve all deployments
-* 🔄 Update deployment
-* ❌ Delete deployment
+*  Create deployment
+*  Retrieve all deployments
+*  Update deployment
+*  Delete deployment
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * Java 17
 * Spring Boot
@@ -26,7 +26,7 @@ This project demonstrates CRUD operations, layered architecture, and Docker cont
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text id="structure"
 controller/   → Handles HTTP requests  
@@ -37,7 +37,7 @@ entity/       → Database model
 
 ---
 
-## ⚙️ Setup & Run (Without Docker)
+##  Setup & Run (Without Docker)
 
 ### 1. Clone the repository
 
@@ -62,9 +62,9 @@ http://localhost:8080
 
 ---
 
-## 📡 API Endpoints
+##  API Endpoints
 
-### ➕ Create Deployment
+###  Create Deployment
 
 ```text id="post"
 POST /deployments
@@ -80,7 +80,7 @@ POST /deployments
 
 ---
 
-### 📥 Get All Deployments
+###  Get All Deployments
 
 ```text id="get"
 GET /deployments
@@ -88,7 +88,7 @@ GET /deployments
 
 ---
 
-### 🔄 Update Deployment
+###  Update Deployment
 
 ```text id="put"
 PUT /deployments/{id}
@@ -96,7 +96,7 @@ PUT /deployments/{id}
 
 ---
 
-### ❌ Delete Deployment
+###  Delete Deployment
 
 ```text id="delete"
 DELETE /deployments/{id}
@@ -104,9 +104,9 @@ DELETE /deployments/{id}
 
 ---
 
-## 🐳 Docker Setup
+##  Docker Setup
 
-### 🔧 Build Docker image
+###  Build Docker image
 
 ```bash id="dockerbuild"
 docker build -t deployment-logger .
@@ -114,7 +114,7 @@ docker build -t deployment-logger .
 
 ---
 
-### ▶️ Run Docker container
+###  Run Docker container
 
 ```bash id="dockerrun"
 docker run -p 8080:8080 deployment-logger
@@ -122,7 +122,7 @@ docker run -p 8080:8080 deployment-logger
 
 ---
 
-### 🌐 Access API
+###  Access API
 
 ```text id="dockerurl"
 http://localhost:8080/deployments
@@ -130,7 +130,7 @@ http://localhost:8080/deployments
 
 ---
 
-## 🧠 What I learned from this project
+##  What I learned from this project
 
 * Spring Boot REST API development
 * CRUD operations with JPA
@@ -140,7 +140,7 @@ http://localhost:8080/deployments
 
 ---
 
-## 🚀 Future Improvements
+##  Future Improvements
 
 * Add PostgreSQL database
 * Add DTO layer fully
