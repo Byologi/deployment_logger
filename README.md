@@ -1,35 +1,47 @@
 # 🚀 Deployment Logger API
 
 A simple Spring Boot REST API for managing deployment records.
-This project demonstrates core backend concepts like CRUD operations, layered architecture, and API testing.
+This project demonstrates CRUD operations, layered architecture, and Docker containerization.
 
 ---
 
 ## 📌 Features
 
-* ➕ Create a deployment
-* 📥 Get all deployments
-* 🔄 Update a deployment
-* ❌ Delete a deployment
+* ➕ Create deployment
+* 📥 Retrieve all deployments
+* 🔄 Update deployment
+* ❌ Delete deployment
 
 ---
 
 ## 🛠️ Tech Stack
 
-* Java
+* Java 17
 * Spring Boot
 * Spring Data JPA
 * Lombok
 * Maven
+* Docker
 * H2 Database (default)
 
 ---
 
-## ⚙️ Getting Started
+## 📂 Project Structure
+
+```text id="structure"
+controller/   → Handles HTTP requests  
+service/      → Business logic  
+repository/   → Database access  
+entity/       → Database model  
+```
+
+---
+
+## ⚙️ Setup & Run (Without Docker)
 
 ### 1. Clone the repository
 
-```bash
+```bash id="clone"
 git clone https://github.com/your-username/deployment-logger.git
 cd deployment-logger
 ```
@@ -38,13 +50,13 @@ cd deployment-logger
 
 ### 2. Run the application
 
-```bash
+```bash id="runapp"
 ./mvnw spring-boot:run
 ```
 
-The application will start at:
+Application runs at:
 
-```
+```text id="url"
 http://localhost:8080
 ```
 
@@ -54,13 +66,11 @@ http://localhost:8080
 
 ### ➕ Create Deployment
 
-```
+```text id="post"
 POST /deployments
 ```
 
-Request Body:
-
-```json
+```json id="postbody"
 {
   "projectName": "my-app",
   "version": "v1.0",
@@ -72,7 +82,7 @@ Request Body:
 
 ### 📥 Get All Deployments
 
-```
+```text id="get"
 GET /deployments
 ```
 
@@ -80,58 +90,62 @@ GET /deployments
 
 ### 🔄 Update Deployment
 
-```
+```text id="put"
 PUT /deployments/{id}
-```
-
-Example:
-
-```
-PUT /deployments/1
 ```
 
 ---
 
 ### ❌ Delete Deployment
 
-```
+```text id="delete"
 DELETE /deployments/{id}
 ```
 
 ---
 
-## 🧠 Project Structure
+## 🐳 Docker Setup
 
-```
-src/main/java/com/fred/deploymentlogger
+### 🔧 Build Docker image
 
-controller/   → Handles HTTP requests  
-service/      → Business logic  
-repository/   → Database operations  
-entity/       → Database model  
+```bash id="dockerbuild"
+docker build -t deployment-logger .
 ```
 
 ---
 
-## 🧪 Testing the API
+### ▶️ Run Docker container
 
-You can test endpoints using tools like Postman.
+```bash id="dockerrun"
+docker run -p 8080:8080 deployment-logger
+```
 
-Example flow:
+---
 
-1. Send a POST request to create data
-2. Use GET to retrieve it
-3. Use PUT to update it
-4. Use DELETE to remove it
+### 🌐 Access API
+
+```text id="dockerurl"
+http://localhost:8080/deployments
+```
+
+---
+
+## 🧠 What I learned from this project
+
+* Spring Boot REST API development
+* CRUD operations with JPA
+* DTO concept (data separation)
+* Docker containerization basics
+* Git & GitHub workflow
 
 ---
 
 ## 🚀 Future Improvements
 
-* Add input validation
-* Introduce DTOs for cleaner architecture
-* Connect to PostgreSQL
+* Add PostgreSQL database
+* Add DTO layer fully
+* Add validation (@Valid)
 * Add authentication (JWT)
-* Dockerize the application
+* Docker Compose setup
 
 ---
