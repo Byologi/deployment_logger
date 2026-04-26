@@ -51,4 +51,9 @@ public class DeploymentController {
     public void deleteDeployment(@PathVariable Long id) {
         service.deleteDeployment(id);
     }
+
+    @GetMapping("/{id}")
+    public Deployment getById(@PathVariable Long id) {
+        return service.getDeploymentById(id);
+    }
 }
