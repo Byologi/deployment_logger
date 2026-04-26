@@ -5,24 +5,31 @@ This project demonstrates CRUD operations, layered architecture, and Docker cont
 
 ---
 
-##  Features
+## Features
 
-*  Create deployment
-*  Retrieve all deployments
-*  Update deployment
-*  Delete deployment
+- Create deployment records
+- Retrieve all deployments
+- Retrieve deployment by ID
+- Update deployment
+- Delete deployment
+- Input validation using `@Valid`
+- Custom exception handling
+- Global exception handler (`@RestControllerAdvice`)
+- PostgreSQL database integration
+- Automatic table creation using Hibernate
 
 ---
 
-##  Tech Stack
+## 🛠 Tech Stack
 
-* Java 17
-* Spring Boot
-* Spring Data JPA
-* Lombok
-* Maven
-* Docker
-* H2 Database (default)
+- Java 17
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- PostgreSQL
+- Maven
+- Hibernate
+- Postman (API testing)
 
 ---
 
@@ -33,6 +40,9 @@ controller/   → Handles HTTP requests
 service/      → Business logic  
 repository/   → Database access  
 entity/       → Database model  
+dto/           → Data transfer objects (optional layer)
+exception/     → Custom exceptions + handlers
+
 ```
 
 ---
@@ -130,22 +140,3 @@ http://localhost:8080/deployments
 
 ---
 
-##  What I learned from this project
-
-* Spring Boot REST API development
-* CRUD operations with JPA
-* DTO concept (data separation)
-* Docker containerization basics
-* Git & GitHub workflow
-
----
-
-##  Future Improvements
-
-* Add PostgreSQL database
-* Add DTO layer fully
-* Add validation (@Valid)
-* Add authentication (JWT)
-* Docker Compose setup
-
----
