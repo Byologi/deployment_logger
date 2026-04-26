@@ -2,6 +2,7 @@ package deployment_logger.service;
 
 import deployment_logger.dto.DeploymentRequest;
 import deployment_logger.entity.Deployment;
+import deployment_logger.exception.DeploymentNotFoundException;
 import deployment_logger.repository.DeploymentRepository;
 import org.springframework.stereotype.Service;
 
@@ -27,12 +28,12 @@ public class DeploymentService {
         return repository.findAll();
     }
 
-    
     public Deployment getDeploymentById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Deployment not found"));
+                .orElseThrow(() ->
+                        new DeploymentNotFoundException("Deployment not found with id " + id)
+                );
     }
-
 
     public void deleteDeployment(Long id) {
         repository.deleteById(id);
